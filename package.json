@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "npm run link",
+    "unlink": "npm run unlink little-ear-cli"
   },
   "bin": {
     "little-ear-cli": "./src/index.js"
