@@ -11,6 +11,7 @@ package-lock.json
 
 # production
 dist
+production
 
 # misc
 .DS_Store
