@@ -34,11 +34,11 @@ program.command('create').description('创建一个模版').action(async() => {
       choices: [
         {
           name: 'vue-admin',
-          value: 'https://github.com/liangshaoqi/vue-template.git',
+          value: 'liangshaoqi/vue-template',
         },
         {
           name: 'react-admin',
-          value: 'https://github.com/liangshaoqi/react-template.git',
+          value: 'liangshaoqi/react-template',
         },
       ]
     }
@@ -54,9 +54,10 @@ program.command('create').description('创建一个模版').action(async() => {
     isExist ? fs.removeSync(dest) : process.exit(1)
   }
   const loading = ora('拉取模版中...').start()
+  // 此处注意template是去掉了前缀,后缀的git地址
   downloadGitRepo(template, dest, (err) => {
     if (err) {
-      loading.fail('拉取失败' + err.message)
+      loading.fail('拉取失败' + err)
       return
     }
     loading.succeed('创建模版成功')
